@@ -1,0 +1,30 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.TwoColumnContentImage>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@using Umbraco.Web.Models;
+@{
+
+}
+
+@if (Model.ContentLeftImageRight.Any())
+{
+    <section class="py-5">
+        <div class="container">
+            @foreach (var item in Model.ContentLeftImageRight)
+            {
+                ImageRightContentLeft content = new ImageRightContentLeft(item);
+                <div class="row">
+                    <div class="col-md-8">
+                        <h2>@content.Heading</h2>
+                        @Html.Raw(content.BasicContent)
+                    </div>
+                    @if (content.Images != null)
+                    {
+                        <div class="col-md-4 mt-5">
+                            <img src="@content.Images.Url()" class="img-fluid" alt="@content.Heading">
+                        </div>
+                    }
+                </div>
+            }
+        </div>
+    </section>
+}

@@ -1,0 +1,54 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.MainHeader>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@using Umbraco.Web.Models;
+@{
+    var count = 0;
+    var dotCount = 0;
+}
+
+@if (Model.HeaderSlider.Any() && Model.HeaderSlider != null)
+{
+<div id="demo" class="carousel slide" data-ride="carousel">
+    <ul class="carousel-indicators">
+        @foreach (var indicator in Model.HeaderSlider)
+        {
+            <li data-target="#demo" data-slide-to="@dotCount" class="@(dotCount == 0 ? "active" : "")"></li>
+            dotCount++;
+        }
+        @*<li data-target="#demo" data-slide-to="0" class="active"></li>
+        <li data-target="#demo" data-slide-to="1"></li>
+        <li data-target="#demo" data-slide-to="2"></li>*@
+    </ul>
+
+    <div class="carousel-inner">
+        @foreach (var slide in Model.HeaderSlider)
+        {
+            Headers headers = new Headers(slide);
+
+            if (headers.BackgroundImage != null)
+            {
+                <div class="carousel-item @(count == 0 ? "active" : "")">
+                    <img src="@headers.BackgroundImage.Url()" alt="@headers.BackgroundImage.Name">
+                </div>
+                count++;
+            }
+        }
+
+        @*<div class="carousel-item">
+            <img src="~/Images/corona_website-banner.jpg" alt="Chicago">
+        </div>
+        <div class="carousel-item">
+            <img src="~/Images/corona_website-banner (1).jpg" alt="New York">
+        </div>*@
+    </div>
+    @if (Model.HeaderSlider.Count() > 1)
+    {
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    }
+</div>
+}

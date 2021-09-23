@@ -46,5 +46,37 @@
             "style": "border-left: 3px solid #ccc; padding: 10px; color: #ccc; font-family: serif; font-style: italic; font-size: 18px",
             "markup": "<blockquote>#value#</blockquote>"
         }
+    },
+    {
+        "name": "Main Header",
+        "alias": "mainHeader",
+        "view": "/App_Plugins/DocTypeGridEditor/Views/doctypegrideditor.html",
+        "render": "/App_Plugins/DocTypeGridEditor/Render/DocTypeGridEditor.cshtml",
+        "icon": "icon-thèif- color-pink",
+        "config": {
+            "allowedDocTypes": ["mainHeader"],
+            "nameTemplate": "",
+            "enablePreview": true,
+            "viewPath": "/Views/Partials/Grid/Editors/",
+            "previewViewPath": "/Views/Partials/Grid/Editors/",
+            "previewCssFilePath": "/Css/",
+            "previewJsFilePath": ""
+        }
+    },
+    {
+        "name": "Image Right Content Left",
+        "alias": "twoColumnContentImage",
+        "view": "/App_Plugins/DocTypeGridEditor/Views/doctypegrideditor.html",
+        "render": "/App_Plugins/DocTypeGridEditor/Render/DocTypeGridEditor.cshtml",
+        "icon": "icon-thèif- color-pink",
+        "config": {
+            "allowedDocTypes": ["twoColumnContentImage"],
+            "nameTemplate": "",
+            "enablePreview": true,
+            "viewPath": "/Views/Partials/Grid/Editors/",
+            "previewViewPath": "/Views/Partials/Grid/Editors/",
+            "previewCssFilePath": "/Css/",
+            "previewJsFilePath": ""
+        }
     }
 ]

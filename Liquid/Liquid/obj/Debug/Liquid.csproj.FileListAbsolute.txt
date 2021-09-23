@@ -219,8 +219,9 @@ C:\Pin-Project\Liquid-Thought\Liquid\Liquid\bin\Umbraco.Web.pdb
 C:\Pin-Project\Liquid-Thought\Liquid\Liquid\bin\Umbraco.Web.xml
 C:\Pin-Project\Liquid-Thought\Liquid\Liquid\bin\Umbraco.Web.UI.xml
 C:\Pin-Project\Liquid-Thought\Liquid\Liquid\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Pin-Project\Liquid-Thought\Liquid\Liquid\obj\Debug\Liquid.csproj.AssemblyReference.cache
 C:\Pin-Project\Liquid-Thought\Liquid\Liquid\obj\Debug\Liquid.csproj.CoreCompileInputs.cache
 C:\Pin-Project\Liquid-Thought\Liquid\Liquid\obj\Debug\Liquid.csproj.CopyComplete
 C:\Pin-Project\Liquid-Thought\Liquid\Liquid\obj\Debug\Liquid.dll
 C:\Pin-Project\Liquid-Thought\Liquid\Liquid\obj\Debug\Liquid.pdb
+C:\Pin-Project\Liquid-Thought\Liquid\Liquid\obj\Debug\Liquid.csproj.AssemblyReference.cache
+C:\Pin-Project\Liquid-Thought\Liquid\Liquid\bin\Our.Umbraco.DocTypeGridEditor.dll

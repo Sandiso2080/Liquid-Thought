@@ -147,6 +147,9 @@
     <Reference Include="NPoco, Version=3.9.4.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\NPoco.3.9.4\lib\net45\NPoco.dll</HintPath>
     </Reference>
+    <Reference Include="Our.Umbraco.DocTypeGridEditor, Version=1.2.7757.21567, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Our.Umbraco.DocTypeGridEditor.1.2.7\lib\net45\Our.Umbraco.DocTypeGridEditor.dll</HintPath>
+    </Reference>
     <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
     </Reference>
@@ -298,6 +301,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\TEMP\ClientDependency\DESKTOP-IG5HAP8-f4f0255743c7eb2680c1d4e76674d042-map.xml" />
+    <Content Include="App_Data\TEMP\DistCache\LMW3SVC14ROOT-lastsynced.txt" />
+    <Content Include="App_Data\Umbraco.sdf" />
+    <Content Include="App_Plugins\DocTypeGridEditor\Css\doctypegrideditor.css" />
+    <Content Include="App_Plugins\DocTypeGridEditor\Js\doctypegrideditor.controllers.js" />
+    <Content Include="App_Plugins\DocTypeGridEditor\Js\doctypegrideditor.directives.js" />
+    <Content Include="App_Plugins\DocTypeGridEditor\Js\doctypegrideditor.resources.js" />
+    <Content Include="App_Plugins\DocTypeGridEditor\Js\doctypegrideditor.services.js" />
+    <Content Include="App_Plugins\DocTypeGridEditor\Lang\da-DK.xml" />
+    <Content Include="App_Plugins\DocTypeGridEditor\Lang\en-GB.xml" />
+    <Content Include="App_Plugins\DocTypeGridEditor\Lang\en-US.xml" />
+    <Content Include="App_Plugins\DocTypeGridEditor\Views\doctypegrideditor.dialog.html" />
+    <Content Include="App_Plugins\DocTypeGridEditor\Views\doctypegrideditor.html" />
     <Content Include="config\grid.editors.config.js" />
     <Content Include="config\Lang\cs-CZ.user.xml" />
     <Content Include="config\Lang\da-DK.user.xml" />
@@ -318,10 +334,41 @@
     <Content Include="config\Lang\sv-SE.user.xml" />
     <Content Include="config\Lang\zh-CN.user.xml" />
     <Content Include="config\logviewer.searches.config.js" />
+    <Content Include="css\custome.css" />
+    <Content Include="css\main.min.css" />
+    <Content Include="css\material-kit.css" />
+    <Content Include="css\material-kit.min.css" />
     <Content Include="Global.asax" />
+    <Content Include="Images\adobestock_401898322.jpeg" />
+    <Content Include="Images\corona_website-banner %281%29.jpg" />
+    <Content Include="Images\corona_website-banner.jpg" />
+    <Content Include="Images\logo.svg" />
+    <Content Include="Images\vistinghours_website-banner_march2020_v1_corona_website-banner.png" />
+    <Content Include="js\core\bootstrap-material-design.min.js" />
+    <Content Include="js\core\jquery.min.js" />
+    <Content Include="js\core\popper.min.js" />
+    <Content Include="js\custome.js" />
+    <Content Include="js\material-kit.js" />
+    <Content Include="js\material-kit.min.js" />
+    <Content Include="js\plugins\bootstrap-datetimepicker.js" />
+    <Content Include="js\plugins\bootstrap-selectpicker.js" />
+    <Content Include="js\plugins\bootstrap-tagsinput.js" />
+    <Content Include="js\plugins\jasny-bootstrap.min.js" />
+    <Content Include="js\plugins\jquery.flexisel.js" />
+    <Content Include="js\plugins\jquery.sharrre.js" />
+    <Content Include="js\plugins\moment.min.js" />
+    <Content Include="js\plugins\nouislider.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Data\Models\Headers.generated.cs" />
+    <Compile Include="App_Data\Models\Home.generated.cs" />
+    <Compile Include="App_Data\Models\Image.generated.cs" />
+    <Compile Include="App_Data\Models\ImageRightContentLeft.generated.cs" />
+    <Compile Include="App_Data\Models\MainHeader.generated.cs" />
+    <Compile Include="App_Data\Models\MainPageModule.generated.cs" />
+    <Compile Include="App_Data\Models\TwoColumnContentImage.generated.cs" />
+    <Compile Include="App_Data\Models\Website.generated.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -336,6 +383,33 @@
     <Content Include="config\HealthChecks.config" />
     <Content Include="config\ClientDependency.config" />
     <Content Include="config\BackOfficeTours\getting-started.json" />
+    <Content Include="App_Data\Logs\UmbracoTraceLog.DESKTOP-IG5HAP8.20210922.json" />
+    <Content Include="App_Data\packages\createdPackages.config" />
+    <Content Include="App_Data\packages\installedPackages.config" />
+    <Content Include="App_Data\TEMP\ClientDependency\1_68babb005aeb4241a5eedc6a4147fa38.cdJ" />
+    <Content Include="App_Data\TEMP\ClientDependency\1_b1a4372ab39a4871b50a54ba95087720.cdJ" />
+    <Content Include="App_Data\TEMP\ClientDependency\1_ced08b3c041b40eaa393ec1e15f38bae.cdJ" />
+    <Content Include="App_Data\TEMP\ClientDependency\1_d8fc6401fbe14f0cae456f1dc389455b.cdC" />
+    <Content Include="App_Data\TEMP\ClientDependency\1_e66b6b6bf2f649a08769da90bda42dda.cdJ" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\External\segments.gen" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\External\segments_3" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\External\_0.cfs" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\External\_0_1.del" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\segments.gen" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\segments_3" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\_0.cfs" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\_0_1.del" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\Members\segments.gen" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\Members\segments_1" />
+    <Content Include="App_Data\TEMP\NuCache\NuCache.Content.db" />
+    <Content Include="App_Data\TEMP\NuCache\NuCache.Media.db" />
+    <Content Include="App_Data\TEMP\TypesCache\umbraco-types.DESKTOP-IG5HAP8.hash" />
+    <Content Include="App_Data\TEMP\TypesCache\umbraco-types.DESKTOP-IG5HAP8.list" />
+    <Content Include="css\material-kit.css.map" />
+    <Content Include="js\material-kit.js.map" />
+    <Content Include="App_Plugins\DocTypeGridEditor\Render\DocTypeGridEditorPreviewer.cshtml" />
+    <Content Include="App_Plugins\DocTypeGridEditor\Render\DocTypeGridEditor.cshtml" />
+    <Content Include="App_Plugins\DocTypeGridEditor\package.manifest" />
     <None Include="packages.config" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />
@@ -348,12 +422,25 @@
     <Content Include="Views\Partials\Grid\Bootstrap3-Fluid.cshtml" />
     <Content Include="Views\Partials\BlockList\Default.cshtml" />
     <Content Include="Views\Master.cshtml" />
+    <Content Include="Views\Home.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\mainHeader.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\twoColumnContentImage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\TEMP\Install\" />
+    <Folder Include="App_Plugins\OsmMaps\assets\css\" />
+    <Folder Include="App_Plugins\OsmMaps\assets\leaflet\images\" />
+    <Folder Include="App_Plugins\OsmMaps\langs\" />
+    <Folder Include="App_Plugins\StarterKit\backoffice\tours\" />
+    <Folder Include="App_Plugins\StarterKit\lang\" />
+    <Folder Include="App_Plugins\StarterKit\tours\views\medialibrary\" />
+    <Folder Include="Views\Partials\NestedContent\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
