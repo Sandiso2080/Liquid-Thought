@@ -52,7 +52,7 @@
         "alias": "mainHeader",
         "view": "/App_Plugins/DocTypeGridEditor/Views/doctypegrideditor.html",
         "render": "/App_Plugins/DocTypeGridEditor/Render/DocTypeGridEditor.cshtml",
-        "icon": "icon-thèif- color-pink",
+        "icon": "icon-pictures-alt-2 color-indigo",
         "config": {
             "allowedDocTypes": ["mainHeader"],
             "nameTemplate": "",
@@ -68,7 +68,7 @@
         "alias": "twoColumnContentImage",
         "view": "/App_Plugins/DocTypeGridEditor/Views/doctypegrideditor.html",
         "render": "/App_Plugins/DocTypeGridEditor/Render/DocTypeGridEditor.cshtml",
-        "icon": "icon-thèif- color-pink",
+        "icon": "icon-firewall color-indigo",
         "config": {
             "allowedDocTypes": ["twoColumnContentImage"],
             "nameTemplate": "",
@@ -78,5 +78,38 @@
             "previewCssFilePath": "/Css/",
             "previewJsFilePath": ""
         }
-    }
+    },
+    {
+        "name": "General Header",
+        "alias": "generalHeader",
+        "view": "/App_Plugins/DocTypeGridEditor/Views/doctypegrideditor.html",
+        "render": "/App_Plugins/DocTypeGridEditor/Render/DocTypeGridEditor.cshtml",
+        "icon": "icon-umb-media color-indigo",
+        "config": {
+            "allowedDocTypes": ["generalHeader"],
+            "nameTemplate": "",
+            "enablePreview": true,
+            "viewPath": "/Views/Partials/Grid/Editors/",
+            "previewViewPath": "/Views/Partials/Grid/Editors/",
+            "previewCssFilePath": "/Css/",
+            "previewJsFilePath": ""
+        }
+    },
+    {
+        "name": "Map Holder",
+        "alias": "mapHolder",
+        "view": "/App_Plugins/DocTypeGridEditor/Views/doctypegrideditor.html",
+        "render": "/App_Plugins/DocTypeGridEditor/Render/DocTypeGridEditor.cshtml",
+        "icon": "icon-map-location color-indigo",
+        "config": {
+            "allowedDocTypes": ["mapHolder"],
+            "nameTemplate": "",
+            "enablePreview": true,
+            "viewPath": "/Views/Partials/Grid/Editors/",
+            "previewViewPath": "/Views/Partials/Grid/Editors/",
+            "previewCssFilePath": "/Css/",
+            "previewJsFilePath": ""
+        }
+    },
 ]
+

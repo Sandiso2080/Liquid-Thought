@@ -1,0 +1,50 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@using Umbraco.Web;
+@{
+    var currentRoot = Model.AncestorOrSelf(1);
+    var nav = currentRoot.Children.Where(x => !x.Value<bool>("hideFromNavigation"));
+    //var secNav = Model.DescendantOrSelf(2).Children.Where(x => !x.Value<bool>("hideFromNavigation"));
+}
+
+<div class="header bg-light py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-right">
+                <ul class="d-inline-block">
+                    <li>Global</li>
+                    <li>Contact Us</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<nav class="navbar navbar-expand-sm sticky-top navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="@currentRoot.Url()">
+            @if (currentRoot.HasValue("siteLogo"))
+            {
+                <img src="@(currentRoot.Value<IPublishedContent>("siteLogo").Url())" />
+            }
+        </a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar1">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        @if (nav != null)
+        {
+            <div class="collapse navbar-collapse" id="navbar1">
+                <ul class="navbar-nav ml-auto">
+                    <li>
+                        <a href="@currentRoot.Url()">@currentRoot.Name</a>
+                    </li>
+                    @foreach (var item in nav)
+                    {
+                        <li class="nav-item px-2">
+                            <a href="@item.Url()">@(item.HasValue("navName") ? item.Value("navName") : item.Name)</a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        }
+    </div>
+</nav>

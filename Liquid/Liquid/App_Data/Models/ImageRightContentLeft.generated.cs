@@ -49,7 +49,7 @@ namespace Umbraco.Web.PublishedModels
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.16.0")]
 		[ImplementPropertyType("basicContent")]
-		public virtual string BasicContent => this.Value<string>("basicContent");
+		public virtual global::System.Web.IHtmlString BasicContent => this.Value<global::System.Web.IHtmlString>("basicContent");
 
 		///<summary>
 		/// Class

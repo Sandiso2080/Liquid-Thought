@@ -1,0 +1,62 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.NewsArticles>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+    Layout = "Master.cshtml";
+}
+@Html.GetGridHtml(Model, "pageModule", "Bootstrap3-Fluid")
+
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="breadcrumb">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li class="active">Accessories</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                @Model.IntroSection
+            </div>
+        </div>
+    </div>
+</section>
+
+@if (Model.Children.Any())
+{
+    <section class="py-5">
+        <div class="container">
+            <div class="row py-5">
+                @foreach (var item in Model.Children())
+                {
+                    NewsArticle news = new NewsArticle(item);
+
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="card mb-3">
+                            @if (news.PostImage != null && news.HasValue("postImage"))
+                            {
+                                <img src="@news.PostImage.Url()" class="card-img-top" alt="@news.Title">
+                            }
+                            <div class="card-body">
+                                @if (news.PublishedDate != null)
+                                {
+                                    <p class="small">@news.PublishedDate</p>
+                                }
+                                <h5 class="card-title">@news.Name</h5>
+                                <div class="card-text" style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; ">@news.Blurb</div>
+                                <a href="@news.Url()" class="text-danger">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+}

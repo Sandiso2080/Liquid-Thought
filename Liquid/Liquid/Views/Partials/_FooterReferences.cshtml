@@ -1,0 +1,12 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@using ClientDependency.Core.Mvc;
+@{
+    //Html.RequiresJs("https://code.jquery.com/jquery-3.5.1.slim.min.js", 1);
+    Html.RequiresJs("https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js", 1);
+    Html.RequiresJs("https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js", 2);
+    Html.RequiresJs("https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js", 3);
+    Html.RequiresJs("https://jscharting.com/JSC15/jscharting.js", 4);
+    Html.RequiresJs("~/js/custome.js", 30);
+}
+
+@Html.Raw(Html.RenderJsHere())

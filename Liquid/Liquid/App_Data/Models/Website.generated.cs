@@ -52,6 +52,13 @@ namespace Umbraco.Web.PublishedModels
 		public virtual bool HideFromNavigation => this.Value<bool>("hideFromNavigation");
 
 		///<summary>
+		/// Nav Name
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.16.0")]
+		[ImplementPropertyType("navName")]
+		public virtual string NavName => this.Value<string>("navName");
+
+		///<summary>
 		/// Redirect Page
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.16.0")]

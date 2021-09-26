@@ -361,12 +361,17 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Data\Models\FeaturedArticle.generated.cs" />
+    <Compile Include="App_Data\Models\GeneralHeader.generated.cs" />
     <Compile Include="App_Data\Models\Headers.generated.cs" />
     <Compile Include="App_Data\Models\Home.generated.cs" />
     <Compile Include="App_Data\Models\Image.generated.cs" />
     <Compile Include="App_Data\Models\ImageRightContentLeft.generated.cs" />
     <Compile Include="App_Data\Models\MainHeader.generated.cs" />
     <Compile Include="App_Data\Models\MainPageModule.generated.cs" />
+    <Compile Include="App_Data\Models\MapHolder.generated.cs" />
+    <Compile Include="App_Data\Models\NewsArticle.generated.cs" />
+    <Compile Include="App_Data\Models\NewsArticles.generated.cs" />
     <Compile Include="App_Data\Models\TwoColumnContentImage.generated.cs" />
     <Compile Include="App_Data\Models\Website.generated.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -425,6 +430,14 @@
     <Content Include="Views\Home.cshtml" />
     <Content Include="Views\Partials\Grid\Editors\mainHeader.cshtml" />
     <Content Include="Views\Partials\Grid\Editors\twoColumnContentImage.cshtml" />
+    <Content Include="Views\NewsArticle.cshtml" />
+    <Content Include="Views\NewsArticles.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\generalHeader.cshtml" />
+    <Content Include="Views\Partials\_Navigation.cshtml" />
+    <Content Include="Views\Partials\_Footer.cshtml" />
+    <Content Include="Views\Partials\_HeaderReferences.cshtml" />
+    <Content Include="Views\Partials\_FooterReferences.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\mapHolder.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -440,7 +453,6 @@
     <Folder Include="App_Plugins\StarterKit\backoffice\tours\" />
     <Folder Include="App_Plugins\StarterKit\lang\" />
     <Folder Include="App_Plugins\StarterKit\tours\views\medialibrary\" />
-    <Folder Include="Views\Partials\NestedContent\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

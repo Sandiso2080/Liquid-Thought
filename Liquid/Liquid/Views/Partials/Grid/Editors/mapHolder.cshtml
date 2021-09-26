@@ -1,0 +1,18 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.MapHolder>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+
+}
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>@Model.Heading</h3>
+                <div class="map-holder">
+                    @Model.Map
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

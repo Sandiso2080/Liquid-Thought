@@ -45,6 +45,34 @@ namespace Umbraco.Web.PublishedModels
 		// properties
 
 		///<summary>
+		/// Email Address
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.16.0")]
+		[ImplementPropertyType("emailAddress")]
+		public virtual string EmailAddress => this.Value<string>("emailAddress");
+
+		///<summary>
+		/// Global Links
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.16.0")]
+		[ImplementPropertyType("globalLinks")]
+		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.Models.Link> GlobalLinks => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.Models.Link>>("globalLinks");
+
+		///<summary>
+		/// Site Logo
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.16.0")]
+		[ImplementPropertyType("siteLogo")]
+		public virtual global::Umbraco.Core.Models.MediaWithCrops SiteLogo => this.Value<global::Umbraco.Core.Models.MediaWithCrops>("siteLogo");
+
+		///<summary>
+		/// Tel
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.16.0")]
+		[ImplementPropertyType("tel")]
+		public virtual string Tel => this.Value<string>("tel");
+
+		///<summary>
 		/// Page Module
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.16.0")]

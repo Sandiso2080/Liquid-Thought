@@ -223,5 +223,4 @@ C:\Pin-Project\Liquid-Thought\Liquid\Liquid\obj\Debug\Liquid.csproj.CoreCompileI
 C:\Pin-Project\Liquid-Thought\Liquid\Liquid\obj\Debug\Liquid.csproj.CopyComplete
 C:\Pin-Project\Liquid-Thought\Liquid\Liquid\obj\Debug\Liquid.dll
 C:\Pin-Project\Liquid-Thought\Liquid\Liquid\obj\Debug\Liquid.pdb
-C:\Pin-Project\Liquid-Thought\Liquid\Liquid\obj\Debug\Liquid.csproj.AssemblyReference.cache
 C:\Pin-Project\Liquid-Thought\Liquid\Liquid\bin\Our.Umbraco.DocTypeGridEditor.dll

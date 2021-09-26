@@ -15,15 +15,21 @@
             <li data-target="#demo" data-slide-to="@dotCount" class="@(dotCount == 0 ? "active" : "")"></li>
             dotCount++;
         }
-        @*<li data-target="#demo" data-slide-to="0" class="active"></li>
-        <li data-target="#demo" data-slide-to="1"></li>
-        <li data-target="#demo" data-slide-to="2"></li>*@
     </ul>
 
     <div class="carousel-inner">
         @foreach (var slide in Model.HeaderSlider)
         {
-            Headers headers = new Headers(slide);
+            NewsArticle news = new NewsArticle(slide.Article);
+
+            if (news.PageImage != null)
+            {
+                <div class="carousel-item @(count == 0 ? "active" : "")">
+                    <img src="@news.PageImage.Url()" alt="@news.Name">
+                </div>
+                count++;
+            }
+            @*FeaturedArticle headers = new FeaturedArticle(slide);
 
             if (headers.BackgroundImage != null)
             {
@@ -31,15 +37,8 @@
                     <img src="@headers.BackgroundImage.Url()" alt="@headers.BackgroundImage.Name">
                 </div>
                 count++;
-            }
+            }*@
         }
-
-        @*<div class="carousel-item">
-            <img src="~/Images/corona_website-banner.jpg" alt="Chicago">
-        </div>
-        <div class="carousel-item">
-            <img src="~/Images/corona_website-banner (1).jpg" alt="New York">
-        </div>*@
     </div>
     @if (Model.HeaderSlider.Count() > 1)
     {

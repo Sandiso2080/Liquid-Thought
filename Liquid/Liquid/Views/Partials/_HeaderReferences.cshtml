@@ -1,0 +1,8 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@using ClientDependency.Core.Mvc;
+@{
+    @Html.RequiresCss("https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css", 1);
+    @Html.RequiresCss("~/css/custome.css", 2);
+}
+
+@Html.Raw(Html.RenderCssHere())

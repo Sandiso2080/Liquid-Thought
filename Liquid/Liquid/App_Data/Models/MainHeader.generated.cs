@@ -49,6 +49,6 @@ namespace Umbraco.Web.PublishedModels
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.16.0")]
 		[ImplementPropertyType("headerSlider")]
-		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.PublishedModels.Headers> HeaderSlider => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.PublishedModels.Headers>>("headerSlider");
+		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.PublishedModels.FeaturedArticle> HeaderSlider => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.PublishedModels.FeaturedArticle>>("headerSlider");
 	}
 }
