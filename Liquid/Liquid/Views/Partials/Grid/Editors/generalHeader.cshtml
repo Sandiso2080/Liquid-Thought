@@ -1,7 +1,7 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.GeneralHeader>
 @using ContentModels = Umbraco.Web.PublishedModels;
 @{
-
+    var background = Model.Value<IPublishedContent>("background") != null ? Model.Value<IPublishedContent>("background").Url() : "";
 }
 @if (Model.BackgroundImage != null)
 {

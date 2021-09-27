@@ -45,6 +45,13 @@ namespace Umbraco.Web.PublishedModels
 		// properties
 
 		///<summary>
+		/// Article Categories
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.16.0")]
+		[ImplementPropertyType("articleCategories")]
+		public virtual global::System.Collections.Generic.IEnumerable<string> ArticleCategories => this.Value<global::System.Collections.Generic.IEnumerable<string>>("articleCategories");
+
+		///<summary>
 		/// Article Color
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.16.0")]

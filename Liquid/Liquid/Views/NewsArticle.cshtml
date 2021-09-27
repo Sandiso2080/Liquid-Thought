@@ -22,10 +22,10 @@
 <section>
     <div class="container">
         <div class="row">
-            <div class="col-12 col-lg-10 mx-auto">
-                <h5>@Model.Title</h5>
+            <div class="col-12 col-lg-10 mx-auto mt-5 mb-5">
+                <h6 class="display-4 py-5">@Html.Raw(Model.Value<string>("title"))</h6>
                 <p class="lead">@Model.Blurb</p>
-                @Html.Raw(Model.BodyText)
+                <div class="lead">@Html.Raw(Model.BodyText)</div>
             </div>
         </div>
     </div>

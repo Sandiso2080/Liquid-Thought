@@ -7,15 +7,15 @@
 
 @if (Model.ContentLeftImageRight.Any())
 {
-    <section class="py-5">
+    <section class="py-5 mt-5 mb-5">
         <div class="container">
             @foreach (var item in Model.ContentLeftImageRight)
             {
                 ImageRightContentLeft content = new ImageRightContentLeft(item);
                 <div class="row">
                     <div class="col-md-8">
-                        <h2 class="pb-5">@content.Heading</h2>
-                        @Html.Raw(content.BasicContent)
+                        <h4 class="pb-5 display-4">@content.Heading</h4>
+                        <div class="textEdit">@Html.Raw(content.BasicContent)</div>
                     </div>
                     @if (content.Images != null)
                     {

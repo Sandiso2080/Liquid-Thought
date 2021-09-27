@@ -1,23 +1,70 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.NewsArticles>
 @using ContentModels = Umbraco.Web.PublishedModels;
+@using Umbraco.Web;
 @{
     Layout = "Master.cshtml";
+    var currentRoot = Model.AncestorOrSelf(1);
+
+    string query = "";
+    if (!string.IsNullOrEmpty(Request.QueryString["category"]))
+    {
+        query = Request.QueryString["category"].ToString();
+    }
+    Dictionary<string, string> dropDown = new Dictionary<string, string>();
+
+    IEnumerable<NewsArticle> newsArticles = Model.Descendants<NewsArticle>();
+    //Model.Ancestor("insight").Descendants<News>.OrderByDescending(x => x.UpdateDate).Take(2);
+
+    if (newsArticles != null && newsArticles.Any())
+    {
+        foreach (NewsArticle newsArt in newsArticles)
+        {
+            if (newsArt.HasValue("articleCategories"))
+            {
+                foreach (string cat in newsArt.ArticleCategories)
+                {
+                    if (!dropDown.ContainsKey(cat))
+                    {
+                        dropDown.Add(cat, "?category=" + cat);
+                    }
+                }
+            }
+        }
+        dropDown.Distinct();
+    }
+
+    NewsArticle latest = newsArticles.OrderByDescending(x => x.UpdateDate).First();
+
+    if (!string.IsNullOrEmpty(query))
+    {
+        newsArticles = newsArticles.Where(x => x.ArticleCategories.Contains(query));
+    }
+
 }
 @Html.GetGridHtml(Model, "pageModule", "Bootstrap3-Fluid")
 
-<section class="py-5">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <ul class="breadcrumb">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Products</a></li>
-                    <li class="active">Accessories</li>
-                </ul>
+@if (Model.Parent.Parent != null)
+{
+    <section class="pt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="breadcrumb">
+                        <li class="pl-3">
+                            <a href="@Model.Parent.Parent.Url()">@Model.Parent.Parent.Name</a>
+                        </li>
+                        @if (Model.Id == 1193)
+                        {
+                            <li class="pl-3">
+                                <a class="active" href="@Model.Url()">@Model.Name</a>
+                            </li>
+                        }
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+}
 
 <section class="py-5">
     <div class="container">
@@ -29,12 +76,32 @@
     </div>
 </section>
 
+@if (dropDown.Count > 0)
+{
+    <div class="container">
+        <div class="row">
+            <div class="col-12 main-selector">
+                <form>
+                    <label for="cars">Filter </label>
+                    <select class="insight-selector" onchange="javascript: location.href = this.value;">
+                        <option value="@Model.Url()">All</option>
+                        @foreach (KeyValuePair<string, string> cat in dropDown)
+                        {
+                            <option value="@cat.Value" @(!string.IsNullOrEmpty(query) && query.ToLower() == cat.Key.ToLower() ? "selected='selected'" : "")>@cat.Key</option>
+                        }
+                    </select>
+                </form>
+            </div>
+        </div>
+    </div>
+}
+
 @if (Model.Children.Any())
 {
     <section class="py-5">
         <div class="container">
             <div class="row py-5">
-                @foreach (var item in Model.Children())
+                @foreach (var item in newsArticles)
                 {
                     NewsArticle news = new NewsArticle(item);
 
@@ -47,7 +114,7 @@
                             <div class="card-body">
                                 @if (news.PublishedDate != null)
                                 {
-                                    <p class="small">@news.PublishedDate</p>
+                                    <p class="small">@news.Value("publishedDate").ToString().AsDateTime().ToString("dd MMM yyyy")</p>
                                 }
                                 <h5 class="card-title">@news.Name</h5>
                                 <div class="card-text" style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; ">@news.Blurb</div>
