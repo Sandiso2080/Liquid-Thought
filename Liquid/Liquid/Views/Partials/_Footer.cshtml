@@ -2,22 +2,23 @@
 @{
     var currentRoot = Model.AncestorOrSelf(1);
     var footer = currentRoot.Children.Where(x => !x.Value<bool>("hideFromNavigation"));
-    //var footer = Model.Descendant(2).Children.Where(x => !x.Value<bool>("hideFromNavigation"));
 }
 
-<footer class="navbar navbar-expand-sm sticky-top navbar-light bg-light">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="@currentRoot.Url()">
-            @if (currentRoot.HasValue("siteLogo"))
-            {
-                <img src="@(currentRoot.Value<IPublishedContent>("siteLogo").Url())" />
-            }
-        </a>
-        @if (footer != null)
-        {
-            <div class="ml-auto">
-                <ul class="navbar-nav">
-                    <li>
+<footer class="page-footer font-small blue pt-4">
+    <div class="container-fluid footer-bg py-5">
+        <div class="row">
+            <div class="col-12 col-md-4 col-lg-6 mt-md-0 mt-3">
+                <a class="navbar-brand" href="@currentRoot.Url()">
+                    @if (currentRoot.HasValue("siteLogo"))
+                    {
+                        <img class="px-3" src="@(currentRoot.Value<IPublishedContent>("siteLogo").Url())" />
+                    }
+                </a>
+            </div>
+
+            <div class="col-12 col-md-8 col-lg-6 mb-md-0 mb-3">
+                <ul class="list-unstyled d-flex justify-content-end px-4">
+                    <li class="px-2 px-lg-4">
                         <a href="@currentRoot.Url()">@currentRoot.Name</a>
                     </li>
                     @foreach (var item in footer)
@@ -27,35 +28,42 @@
                         </li>
                     }
                 </ul>
-                <ul>
+                <ul class="list-style-none d-flex justify-content-end px-2 h5">
                     @if (currentRoot.HasValue("tel"))
                     {
-                        <li>@currentRoot.Value("tel")</li>
+                        <li class="px-2 px-lg-4">
+                            <a href="tel:@currentRoot.Value("tel")">
+                                <i class="fa-solid fa-phone"></i>
+                                @currentRoot.Value("tel")
+                            </a>
+                        </li>
                     }
                     @if (currentRoot.HasValue("emailAddress"))
                     {
-                        <li><a href="mailto:@currentRoot.Value("emailAddress")">@currentRoot.Value("emailAddress")</a></li>
+                        <li class="px-4">
+                            <a href="mailto:@currentRoot.Value("emailAddress")">
+                                <i class="fa-solid fa-envelope"></i>
+                                @currentRoot.Value("emailAddress")
+                             </a>
+                        </li>
                     }
                 </ul>
             </div>
-        }
+        </div>
     </div>
-</footer>
-
-<footer class="footer">
-    <div class="footer-bottom bg-navy">
-        <div class="container-fluid">
+    <div class="footer-copyright bg-navy py-4">
+        <div class="container">
             <div class="row">
                 <div class="col-md-6 col-sm-12">
-                    <ul class="footer-links">
-                        <li><a href="" target="_blank">Privacy Notice</a></li>
-                        <li><a href="" target="_blank">Electronic Communications Act </a></li>
-                        <li><a href="" target="_blank">Promotion of Access to Information Act Manual</a></li>
-                    </ul>
+                    <div class="text-white small footer-links">
+                        <span class="pr-3">Website Privacy Notice</span>
+                        <span class="pr-3">Electronic Communications Act</span> <br class="d-none d-lg-block"/>
+                        <span class="pr-3">Promotion of Access to Information Act Manual</span>
+                    </div>
                 </div>
 
-                <div class="col-md-6 col-sm-12">
-                    <p class="clr-white">Copyright © 2020 Life Healthcare. All rights reserved.</p>
+                <div class="col-md-6 col-sm-12 text-center">
+                    <p class="text-white small">Copyright © 2020 Life Healthcare. All rights reserved.</p>
                 </div>
             </div>
         </div>

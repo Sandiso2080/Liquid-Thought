@@ -1,25 +1,32 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
 @using Umbraco.Web;
+@using Umbraco.Web.Models
 @{
     var currentRoot = Model.AncestorOrSelf(1);
     var nav = currentRoot.Children.Where(x => !x.Value<bool>("hideFromNavigation"));
-    //var secNav = Model.DescendantOrSelf(2).Children.Where(x => !x.Value<bool>("hideFromNavigation"));
+    var links = currentRoot.Value<IEnumerable<Link>>("globalLinks");
 }
 
-<div class="header bg-light py-5">
+
+@if (links.Any())
+{
     <div class="container-fluid">
-        <div class="row">
+        <div class="row topNav pt-4">
             <div class="col-12 text-right">
-                <ul class="d-inline-block">
-                    <li>Global</li>
-                    <li>Contact Us</li>
+                <ul class="d-flex justify-content-end mb-0">
+                    @foreach (var link in links)
+                    {
+                        <li class="list-style-none px-4">
+                            <a href="@link.Url"><span class="fa-solid"></span> @link.Name</a>
+                        </li>
+                    }
                 </ul>
             </div>
         </div>
     </div>
-</div>
+}
 
-<nav class="navbar navbar-expand-sm sticky-top navbar-light bg-light">
+<nav class="navbar navbar-expand-sm sticky-top navbar-light bg-white">
     <div class="container-fluid">
         <a class="navbar-brand" href="@currentRoot.Url()">
             @if (currentRoot.HasValue("siteLogo"))
@@ -39,7 +46,7 @@
                     </li>
                     @foreach (var item in nav)
                     {
-                        <li class="nav-item px-2">
+                        <li class="nav-item px-md-2">
                             <a href="@item.Url()">@(item.HasValue("navName") ? item.Value("navName") : item.Name)</a>
                         </li>
                     }
@@ -48,3 +55,4 @@
         }
     </div>
 </nav>
+

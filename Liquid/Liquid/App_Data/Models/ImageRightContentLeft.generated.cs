@@ -71,5 +71,12 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.16.0")]
 		[ImplementPropertyType("images")]
 		public virtual global::Umbraco.Core.Models.MediaWithCrops Images => this.Value<global::Umbraco.Core.Models.MediaWithCrops>("images");
+
+		///<summary>
+		/// Link
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.16.0")]
+		[ImplementPropertyType("link")]
+		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.Models.Link> Link => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.Models.Link>>("link");
 	}
 }

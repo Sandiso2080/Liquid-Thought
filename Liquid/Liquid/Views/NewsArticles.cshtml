@@ -49,14 +49,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <ul class="breadcrumb">
-                        <li class="pl-3">
-                            <a href="@Model.Parent.Parent.Url()">@Model.Parent.Parent.Name</a>
+                    <ul class="breadcrumb bg-white pl-0 mb-0">
+                        <li class="pl-0">
+                            <a href="@Model.Parent.Parent.Url()" class="font-weight-bold text-primary">@Model.Parent.Parent.Name <i class="fa-solid fa-angle-right ml-2"></i></a>
                         </li>
                         @if (Model.Id == 1193)
                         {
                             <li class="pl-3">
-                                <a class="active" href="@Model.Url()">@Model.Name</a>
+                                <a class="active font-weight-bold text-primary" href="@Model.Url()">@Model.Name</a>
                             </li>
                         }
                     </ul>
@@ -66,7 +66,7 @@
     </section>
 }
 
-<section class="py-5">
+<section class="pt-5 pb-4">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -81,9 +81,9 @@
     <div class="container">
         <div class="row">
             <div class="col-12 main-selector">
-                <form>
-                    <label for="cars">Filter </label>
-                    <select class="insight-selector" onchange="javascript: location.href = this.value;">
+                <form class="border-top border-bottom border-top border-bottom py-3">
+                    <label class="h3 text-primary font-weight-bold pr-4">Filter </label>
+                    <select class="insight-selector p-1 text-primary" onchange="javascript: location.href = this.value;">
                         <option value="@Model.Url()">All</option>
                         @foreach (KeyValuePair<string, string> cat in dropDown)
                         {
@@ -96,9 +96,9 @@
     </div>
 }
 
-@if (Model.Children.Any())
+@if (newsArticles.Any())
 {
-    <section class="py-5">
+    <section class="py-2">
         <div class="container">
             <div class="row py-5">
                 @foreach (var item in newsArticles)
@@ -106,19 +106,24 @@
                     NewsArticle news = new NewsArticle(item);
 
                     <div class="col-lg-4 col-md-6 col-12">
-                        <div class="card mb-3">
+                        <div class="card mb-3 border-0">
                             @if (news.PostImage != null && news.HasValue("postImage"))
                             {
                                 <img src="@news.PostImage.Url()" class="card-img-top" alt="@news.Title">
                             }
-                            <div class="card-body">
+                            <div class="card-body px-0">
                                 @if (news.PublishedDate != null)
                                 {
-                                    <p class="small">@news.Value("publishedDate").ToString().AsDateTime().ToString("dd MMM yyyy")</p>
+                                    <p class="small  text-info font-weight-bold">@news.Value("publishedDate").ToString().AsDateTime().ToString("dd MMM yyyy")</p>
                                 }
                                 <h5 class="card-title">@news.Name</h5>
-                                <div class="card-text" style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; ">@news.Blurb</div>
-                                <a href="@news.Url()" class="text-danger">Read More</a>
+                                <div class="card-text">
+                                    <p class="mb-0">@news.Blurb</p>
+                                </div>
+                                <a href="@news.Url()" class="text-danger font-weight-bold position-relative">
+                                    <span>Read More</span> 
+                                    <i class="fa-solid fa-angle-right"></i>
+                                </a>
                             </div>
                         </div>
                     </div>

@@ -2,20 +2,30 @@
 @using ContentModels = Umbraco.Web.PublishedModels;
 @using Umbraco.Web.Models;
 @{
-
+    
 }
 
 @if (Model.ContentLeftImageRight.Any())
 {
-    <section class="py-5 mt-5 mb-5">
+    <section class="pb-5">
         <div class="container">
             @foreach (var item in Model.ContentLeftImageRight)
             {
                 ImageRightContentLeft content = new ImageRightContentLeft(item);
+                var link = content.Value<IEnumerable<Link>>("link").FirstOrDefault();
+
                 <div class="row">
                     <div class="col-md-8">
-                        <h4 class="pb-5 display-4">@content.Heading</h4>
-                        <div class="textEdit">@Html.Raw(content.BasicContent)</div>
+                        <h2 class="pb-4 text-primary">@content.Heading</h2>
+                        <div class="text-primary pb-4">@Html.Raw(content.BasicContent)</div>
+                       
+                        @if (link != null)
+                        {
+                            <a href="@link.Url" target="@link.Target" class="text-danger lead font-weight-bold">
+                                <span>@link.Name</span>
+                                <i class="fa-solid fa-angle-right"></i>
+                            </a>
+                        }
                     </div>
                     @if (content.Images != null)
                     {

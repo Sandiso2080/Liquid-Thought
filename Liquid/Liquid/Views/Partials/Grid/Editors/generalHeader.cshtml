@@ -5,15 +5,13 @@
 }
 @if (Model.BackgroundImage != null)
 {
-<div class="view intro-2">
-    <div class="full-bg-img" style="background-image: url('@Model.BackgroundImage.Url()'); background-repeat: no-repeat; background-size: cover; background-position: center; ">
-        <div class="mask rgba-black-light flex-center py-5">
-            <div class="container white-text py-5">
-                <div class="white-text wow fadeInUp">
-                    <h2 class="py-5">@Model.Title</h2>
+    <div class="page-header header-filter header-small" data-parallax="true" style="background-image: url('@Model.BackgroundImage.Url()');">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="title">@Model.Title</h1>
                 </div>
             </div>
         </div>
     </div>
-</div>
 }

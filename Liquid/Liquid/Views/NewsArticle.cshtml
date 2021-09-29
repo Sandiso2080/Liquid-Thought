@@ -1,17 +1,15 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.NewsArticle>
 @using ContentModels = Umbraco.Web.PublishedModels;
 @{
-	Layout = "Master.cshtml";
+    Layout = "Master.cshtml";
 }
 @if (Model.PageImage != null)
 {
-    <div class="view intro-2">
-        <div class="full-bg-img" style="background-image: url('@Model.PageImage.Url()'); background-repeat: no-repeat; background-size: cover; background-position: center;">
-            <div class="mask rgba-black-light">
-                <div class="container white-text">
-                    <div class="white-text wow fadeInUp">
-                        <h2>@Model.Name</h2>
-                    </div>
+    <div class="page-header header-filter header-small" data-parallax="true" style="background-image: url('@Model.PageImage.Url()');">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="title">@Model.Name</h1>
                 </div>
             </div>
         </div>
@@ -23,7 +21,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-lg-10 mx-auto mt-5 mb-5">
-                <h6 class="display-4 py-5">@Html.Raw(Model.Value<string>("title"))</h6>
+                <h6 class="py-5">@Model.Title</h6>
                 <p class="lead">@Model.Blurb</p>
                 <div class="lead">@Html.Raw(Model.BodyText)</div>
             </div>
